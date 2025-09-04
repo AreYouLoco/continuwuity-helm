@@ -34,6 +34,7 @@ The following tables lists the configurable parameters of the continuwuity chart
 | `config.server_name`               | Server name                                                                                | `your.server.name`      |
 | `config.max_request_size`          | Maximum upload size                                                                        | `20000000` (20MB)       |
 | `config.allow_registration`        | Whether or not to allow users to register new accounts                                     | `false`                 |
+| `config.registration_token`        | Token must be set when registration is enabled                                             | `supa-dupa-secret-token`             |
 | `config.allow_federation`          | Whether or not to allow federating with other Matrix servers                               | `false`                 |
 | `config.trusted_servers`           | Servers to trust when federating; if enabling federating, `matrix.org` usually makes sense | `[]`                    |
 | `extraLabels`                      | Additional labels to apply to all created resources                                        | `{}`                    |
