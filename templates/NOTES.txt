@@ -1,6 +1,6 @@
-conduwuit has been installed. You can access the server from within the k8s cluster using:
+continuwuity has been installed. You can access the server from within the k8s cluster using:
 
-  {{ template "conduwuit.fullname" . }}.{{ .Release.Namespace }}.svc.cluster.local:{{ .Values.service.port }}
+  {{ template "continuwuity.fullname" . }}.{{ .Release.Namespace }}.svc.cluster.local:{{ .Values.service.port }}
 
 WARNING:  Scaling the StatefulSet will probably cause failures and quiet data corruption.
 
