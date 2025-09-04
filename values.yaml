@@ -1,10 +1,10 @@
 image:
-  repository: girlbossceo/conduwuit
-  tag: "v0.4.3-d875e0c1c00d8e42b83dd562c3945c077898746d"
+  repository: forgejo.ellis.link/continuwuation/continuwuity
+  tag: sha-7be651a3075624394ae23363b64517c753d80856
   pullPolicy: IfNotPresent
 
 config:
-  server_name: "your.server.name"
+  server_name: "continuwuity.tld"
   max_request_size: "20000000"
   allow_registration: false
   allow_federation: false
@@ -38,7 +38,7 @@ ingress:
   annotations: {}
   path: /
   hosts:
-    - conduwuit
+    - continuwuity.tld
   tls: false
 
 ## Persist configuration to a persistent volume
