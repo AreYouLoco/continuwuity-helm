@@ -1,7 +1,7 @@
 image:
   repository: forgejo.ellis.link/continuwuation/continuwuity
-  tag: sha-7be651a3075624394ae23363b64517c753d80856
-  pullPolicy: IfNotPresent
+  tag: main
+  pullPolicy: Always
 
 config:
   server_name: "continuwuity.tld"

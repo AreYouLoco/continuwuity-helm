@@ -29,8 +29,8 @@ The following tables lists the configurable parameters of the conduwuit chart an
 | Parameter                          | Description                                                                                | Default                 |
 | ---------------------------------- | ------------------------------------------------------------------------------------------ | ----------------------- |
 | `image.repository`                 | Image repository                                                                           | `forgejo.ellis.link/continuwuation/continuwuity` |
-| `image.tag`                        | Image tag. Possible values listed [here][images].                                          | `sha-7be651a3075624394ae23363b64517c753d80856`  |
-| `image.pullPolicy`                 | Image pull policy                                                                          | `IfNotPresent`          |
+| `image.tag`                        | Image tag. Possible values listed [here][images].                                          | `main`  |
+| `image.pullPolicy`                 | Image pull policy                                                                          | `Always`          |
 | `config.server_name`               | Server name                                                                                | `your.server.name`      |
 | `config.max_request_size`          | Maximum upload size                                                                        | `20000000` (20MB)       |
 | `config.allow_registration`        | Whether or not to allow users to register new accounts                                     | `false`                 |
