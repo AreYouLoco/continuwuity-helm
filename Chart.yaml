@@ -2,7 +2,7 @@ apiVersion: v1
 appVersion: v0.5.0-rc.7
 description: Stable, reliable Matrix homeserver implementation in Rust, featureful fork of Conduwuit
 name: continuwuity
-version: 0.1.0
+version: 0.1.1
 keywords:
   - conduwuit
   - continuwuity
