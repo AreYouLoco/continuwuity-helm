@@ -1,17 +1,17 @@
-# conduwuit
-This is a helm chart for [conduwuit][homepage]
+# continuwuity
+This is a helm chart for [continuwuity][homepage] forked from [conduwuit chart][conduwuit] 
 
 ## TL;DR;
 ```console
-helm repo add cronce https://charts.cronce.io/
-helm install --set server_name=matrix.example.org cronce/conduwuit
+helm repo add continuwuity https://github.com/areyouloco/continuwuity-helm
+helm install --set server_name=matrix.example.org continuwuity/continuwuity
 ```
 
 ## Installing the Chart
 To install the chart with the release name `my-release`:
 
 ```console
-helm install --name my-release cronce/conduwuit
+helm install --name my-release continuwuity/continuwuity
 ```
 
 ## Uninstalling the Chart
@@ -28,8 +28,8 @@ The following tables lists the configurable parameters of the conduwuit chart an
 
 | Parameter                          | Description                                                                                | Default                 |
 | ---------------------------------- | ------------------------------------------------------------------------------------------ | ----------------------- |
-| `image.repository`                 | Image repository                                                                           | `girlbossceo/conduwuit` |
-| `image.tag`                        | Image tag. Possible values listed [here][docker].                                          | `next-commit-147f2752`  |
+| `image.repository`                 | Image repository                                                                           | `forgejo.ellis.link/continuwuation/continuwuity` |
+| `image.tag`                        | Image tag. Possible values listed [here][images].                                          | `sha-7be651a3075624394ae23363b64517c753d80856`  |
 | `image.pullPolicy`                 | Image pull policy                                                                          | `IfNotPresent`          |
 | `config.server_name`               | Server name                                                                                | `your.server.name`      |
 | `config.max_request_size`          | Maximum upload size                                                                        | `20000000` (20MB)       |
@@ -66,18 +66,21 @@ Specify each parameter using the `--set key=value[,key=value]` argument to `helm
 ```console
 helm install --name my-release \
 	--set ingress.enabled=true \
-	cronce/conduwuit
+	continuwuity/continuwuity
 ```
 
 Alternatively, a YAML file that specifies the values for the above parameters can be provided while installing the chart. For example,
 
 ```console
-helm install --name my-release -f values.yaml cronce/conduwuit
+helm install --name my-release -f values.yaml continuwuity/continuwuity
 ```
 
 Read through the [values.yaml](values.yaml) file.
 
-[docker]: https://hub.docker.com/r/girlbossceo/conduwuit
-[github]: https://github.com/girlbossceo/conduwuit
-[homepage]: https://conduwuit.puppyirl.gay/
+# source
+Source code is available [here][source]
 
+[images]: https://forgejo.ellis.link/continuwuation/-/packages/container/continuwuity/versions
+[source]: https://forgejo.ellis.link/continuwuation/continuwuity
+[homepage]: https://continuwuity.org
+[conduwuit]: https://gitlab.cronce.io/charts/conduwuit/
