@@ -12,10 +12,10 @@ server: |-
   client: |-
     {
       "m.homeserver": {
-    {{- printf "{\"base_url\":{\"https://%s\"}}" .Values.config.server_name | nindent 4 }}
+        "base_url": "https://{{ .Values.config.server_name }}"
       },
       "m.identity_server": {
-    {{- printf "{\"base_url\":{\"https://%s\"}}" .Values.config.identity_server | nindent 4 }}
+        "base_url": "https://{{ .Values.config.identity_server }}"
       }
     }
 {{- end }}
