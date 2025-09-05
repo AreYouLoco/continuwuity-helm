@@ -22,8 +22,14 @@ spec:
         volumeMounts:
         - name: json-volume
           mountPath: /usr/share/nginx/html/
+        - name: config-volume
+          mountPath: /usr/share/nginx/html/
+          subPath: nginx.conf
       volumes:
       - name: json-volume
         configMap:
           name: continuwuity-nginx-static-json
+      - name: config-volume
+        configMap:
+          name: continuwuity-nginx-static-config
 {{- end }}
