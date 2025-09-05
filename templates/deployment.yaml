@@ -1,4 +1,4 @@
-{{- if .Values.well_known.enabled }}
+{{- if .Values.ingress.well_known.enabled }}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
