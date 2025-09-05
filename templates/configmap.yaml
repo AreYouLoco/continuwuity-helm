@@ -5,7 +5,7 @@ metadata:
   name: continuwuity-nginx-static-json
 data:
 {{- if .Values.config.allow_federation }}
-server: |-
+  server: |-
     {{- $port := .Values.config.federation_port | toString -}}
     {{- printf "{\"m.server\":{\"https://%s:%s\"}}" .Values.config.server_name $port | nindent 4 }}
 {{- end }}
