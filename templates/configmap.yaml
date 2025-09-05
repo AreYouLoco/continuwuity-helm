@@ -1,4 +1,3 @@
-
 {{- if .Values.ingress.well_known.enabled }}
 apiVersion: v1
 kind: ConfigMap
@@ -6,16 +5,11 @@ metadata:
   name: continuwuity-nginx-static-json
 data:
 {{- if .Values.config.allow_federation }}
-  server: |
-    { "m.server": {{{{https://{{ .Values.config.server_name }}:{{ .Values.config.federation_port }}}}  | quote }}
+  server: |-
+    {{- $server := dict "m.server" (printf "https://%s:%s" .Values.config.server_name .Values.config.federation_port) -}}
+    {{- $server | toYaml | nindent 4 }}
 {{- end }}
-  client: |
-    {
-      "m.homeserver": {
-        "base_url": {{ .Values.config.server_name | quote }}
-      },
-      "m.identity_server": {
-        "base_url": "https://vector.im"
-      }
-    }
+  client: |-
+    {{- $client := dict "m.homeserver" (dict "base_url" .Values.config.server_name) "m.identity_server" (dict "base_url" "https://vector.im") -}}
+    {{- $client | toYaml | nindent 4 }}
 {{- end }}
