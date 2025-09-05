@@ -12,6 +12,7 @@ config:
   allow_federation: false
   federation_port: 443
   trusted_servers: []
+  identity_server: vector.im
 
 extraEnv: []
 

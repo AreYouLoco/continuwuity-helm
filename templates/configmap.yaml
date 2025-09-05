@@ -12,10 +12,10 @@ server: |-
   client: |-
     {
       "m.homeserver": {
-        "base_url": {{ .Values.config.server_name | quote }}
+    {{- printf "{\"base_url\":{\"https://%s\"}}" .Values.config.server_name | nindent 4 }}
       },
       "m.identity_server": {
-        "base_url": "https://vector.im"
+    {{- printf "{\"base_url\":{\"https://%s\"}}" .Values.config.identity_server | nindent 4 }}
       }
     }
 {{- end }}
