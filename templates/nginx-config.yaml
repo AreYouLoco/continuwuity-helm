@@ -25,7 +25,7 @@ http {
 
     access_log  /var/log/nginx/access.log  main;
 
-  location /images/ {
+  location / {
       autoindex on;
   }
 
