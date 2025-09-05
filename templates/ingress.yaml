@@ -47,7 +47,7 @@ spec:
                 port:
                   number: {{ $servicePort }}
           {{- if $.Values.ingress.well_known.enabled }}
-          - path: /(\.well-known/matrix/.*)
+          - path: /.well-known/matrix/
             pathType: ImplementationSpecific
             backend:
               service:
