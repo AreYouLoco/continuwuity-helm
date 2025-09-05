@@ -25,6 +25,8 @@ spec:
         - name: config-volume
           mountPath: /etc/nginx/
           subPath: nginx.conf
+      securityContext:
+        fsGroup: 101
       volumes:
       - name: json-volume
         configMap:
