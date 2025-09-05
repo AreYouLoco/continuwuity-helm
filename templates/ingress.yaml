@@ -52,7 +52,6 @@ spec:
             backend:
               service:
                 name: continuwuity-static-nginx-service
-                service:
                 port:
                   number: {{ $.Values.ingress.well_known.port }}
           {{- end }}
