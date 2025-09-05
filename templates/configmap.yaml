@@ -6,7 +6,7 @@ metadata:
 data:
 {{- if .Values.config.allow_federation }}
   server: |-
-    {{- printf "{\"m.server\":{\"https://%s:%d\"}}" .Values.config.server_name .Values.config.federation_port }}
+    {{- printf "{\"m.server\":{\"https://%s:%d\"}}" .Values.config.server_name .Values.config.federation_port | nindent 4 }}
 {{- end }}
   client: |-
     {
