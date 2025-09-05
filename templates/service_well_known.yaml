@@ -1,13 +1,8 @@
+{{- if .Values.ingress.well_known.enabled }}
 apiVersion: v1
 kind: Service
 metadata:
-  {{- if .Values.service.annotations }}
-  annotations:
-    {{- toYaml .Values.service.annotations | nindent 4 }}
-  {{- end }}
-  name: {{ template "continuwuity.fullname" . }}
-  labels:
-    {{- include "continuwuity.labels" . | nindent 4 }}
+  name: continuwuity-static-nginx-service
 spec:
   clusterIP: {{ .Values.service.clusterIP | quote }}
   {{- if .Values.service.externalIPs }}
@@ -22,10 +17,10 @@ spec:
     {{- toYaml .Values.service.loadBalancerSourceRanges | nindent 4 }}
   {{- end }}
   ports:
-    - name: http
-      protocol: TCP
-      port: {{ .Values.service.port }}
-      targetPort: http
+  - protocol: TCP
+    port: {{ .Values.ingress.well_known.port }}
+    targetPort: http
   selector:
-    {{- include "continuwuity.labels" . | nindent 4 }}
+    app: continuwuity-static-nginx-server
   type: {{ .Values.service.type }}
+{{- end }}
