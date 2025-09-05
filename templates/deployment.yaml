@@ -16,7 +16,7 @@ spec:
       initContainers:
       - name: fix-permissions
         image: busybox:latest
-        command: ["sh","-c","mkdir -p /usr/share/nginx/html /etc/nginx && chmod -R 444 /usr/share/nginx/html /etc/nginx/nginx.conf"]
+        command: ["sh","-c","mkdir -p /usr/share/nginx/html && mkdir -p /etc/nginx && chmod -R 444 /usr/share/nginx/html /etc/nginx/nginx.conf"]
         volumeMounts:
         - name: json-volume
           mountPath: /usr/share/nginx/html/
