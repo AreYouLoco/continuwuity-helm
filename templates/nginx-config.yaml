@@ -4,7 +4,7 @@ kind: ConfigMap
 metadata:
   name: continuwuity-nginx-static-config
 data:
-  nginx\.conf: |-
+  nginx.conf: |-
     user  nginx;
     worker_processes  auto;
     
