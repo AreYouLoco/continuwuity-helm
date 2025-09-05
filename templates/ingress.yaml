@@ -46,6 +46,16 @@ spec:
                 name: {{ $fullName }}
                 port:
                   number: {{ $servicePort }}
+          {{- if .Values.ingress.well_known.enabled }}
+          - path: /(\.well-known/matrix/.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: continuwuity-static-nginx-service
+                service:
+                port:
+                  number: {{ .Values.ingress.well_known.port }}
+          {{- end }}
     {{- end }}
     {{- else }}
     {{- range .Values.ingress.hosts }}

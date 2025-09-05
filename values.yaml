@@ -10,6 +10,7 @@ config:
   # When allow_registration set to true you must also set registration token or captcha
   registration_token: supa-dupa-secret-token
   allow_federation: false
+  federation_port: 443
   trusted_servers: []
 
 extraEnv: []
@@ -31,6 +32,8 @@ service:
   loadBalancerIP: ""
   loadBalancerSourceRanges: []
 
+
+
 ingress:
   enabled: false
   class:
@@ -42,6 +45,9 @@ ingress:
   hosts:
     - continuwuity.tld
   tls: false
+  well_known:
+    enabled: false
+    port: 81
 
 ## Persist configuration to a persistent volume
 persistence:

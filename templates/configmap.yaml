@@ -1,0 +1,21 @@
+
+{{- if .Values.ingress.well_known.enabled }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: continuwuity-nginx-static-json
+data:
+{{- if .Values.config.allow_federation }}
+  server: |
+    { "m.server": {{{{https://{{ .Values.config.server_name }}:{{ .Values.config.federation_port }}}}  | quote }}
+{{- end }}
+  client: |
+    {
+      "m.homeserver": {
+        "base_url": {{ .Values.config.server_name | quote }}
+      },
+      "m.identity_server": {
+        "base_url": "https://vector.im"
+      }
+    }
+{{- end }}

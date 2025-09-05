@@ -1,0 +1,29 @@
+{{- if .Values.well_known.enabled }}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: continuwuity-static-nginx-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: continuwuity-static-nginx-server
+  template:
+    metadata:
+      labels:
+        app: continuwuity-static-nginx-server
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest
+        pullPolicy: Always
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: json-volume
+          mountPath: /usr/share/nginx/html/
+      volumes:
+      - name: json-volume
+        configMap:
+          name: continuwuity-nginx-static-json
+{{- end }}

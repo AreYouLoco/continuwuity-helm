@@ -36,6 +36,7 @@ The following tables lists the configurable parameters of the continuwuity chart
 | `config.allow_registration`        | Whether or not to allow users to register new accounts                                     | `false`                 |
 | `config.registration_token`        | Token must be set when registration is enabled                                             | `supa-dupa-secret-token`             |
 | `config.allow_federation`          | Whether or not to allow federating with other Matrix servers                               | `false`                 |
+| `config.federation_port`           | Federation port defaults to 8443                                                            | `8443`                 |
 | `config.trusted_servers`           | Servers to trust when federating; if enabling federating, `matrix.org` usually makes sense | `[]`                    |
 | `extraLabels`                      | Additional labels to apply to all created resources                                        | `{}`                    |
 | `service.annotations`              | Annotations for Service resource                                                           | `{}`                    |
