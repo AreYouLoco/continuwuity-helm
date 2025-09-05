@@ -23,7 +23,7 @@ spec:
         - name: json-volume
           mountPath: /usr/share/nginx/html/
         - name: config-volume
-          mountPath: /usr/share/nginx/html/
+          mountPath: /etc/nginx/
           subPath: nginx.conf
       volumes:
       - name: json-volume
