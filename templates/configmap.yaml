@@ -7,7 +7,7 @@ data:
 {{- if .Values.config.allow_federation }}
   server: |-
     {{- $port := .Values.config.federation_port | toString -}}
-    {{- printf "{\"m.server\":{\"https://%s:%s\"}}" .Values.config.server_name $port | nindent 4 }}
+    {{- printf "{\"m.server\":\"https://%s:%s\"}" .Values.config.server_name $port | nindent 4 }}
 {{- end }}
   client: |-
     {
