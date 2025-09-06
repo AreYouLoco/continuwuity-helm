@@ -4,7 +4,9 @@ kind: Service
 metadata:
   name: continuwuity-static-nginx-service
 spec:
+  {{- if .Values.service.clusterIP }}
   clusterIP: {{ .Values.service.clusterIP | quote }}
+  {{- end }}
   {{- if .Values.service.externalIPs }}
   externalIPs:
     {{- toYaml .Values.service.externalIPs | nindent 4 }}
