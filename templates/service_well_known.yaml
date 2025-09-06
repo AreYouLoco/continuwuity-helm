@@ -20,8 +20,9 @@ spec:
   {{- end }}
   ports:
   - protocol: TCP
+    name: http
     port: {{ .Values.ingress.well_known.port }}
-    targetPort: http
+    targetPort: 80
   selector:
     app: continuwuity-static-nginx-server
   type: {{ .Values.service.type }}
