@@ -13,16 +13,6 @@ spec:
       labels:
         app: continuwuity-static-nginx-server
     spec:
-      initContainers:
-      - name: fix-permissions
-        image: busybox:latest
-        command: ["sh","-c","mkdir -p /usr/share/nginx/html && mkdir -p /etc/nginx && chmod -R 444 /usr/share/nginx/html /etc/nginx/nginx.conf"]
-        volumeMounts:
-        - name: json-volume
-          mountPath: /usr/share/nginx/html/
-        - name: config-volume
-          mountPath: /etc/nginx/
-          subPath: nginx.conf
       containers:
       - name: nginx
         image: nginx:latest
@@ -33,13 +23,15 @@ spec:
         - name: json-volume
           mountPath: /usr/share/nginx/html/
         - name: config-volume
-          mountPath: /etc/nginx/
+          mountPath: /etc/nginx/nginx.conf
           subPath: nginx.conf
       volumes:
       - name: json-volume
         configMap:
           name: continuwuity-nginx-static-json
+          defaultMode: 0664
       - name: config-volume
         configMap:
           name: continuwuity-nginx-static-config
+          defaultMode: 0664
 {{- end }}
